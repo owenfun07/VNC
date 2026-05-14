@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xCloud VM Platform</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo">xCloud</div>
+
+    <input id="apiKey" placeholder="API Key">
+
+    <button onclick="createVM()">
+        Create VM
+    </button>
+
+    <button onclick="deleteVM()">
+        Delete VM
+    </button>
+
+    <button onclick="toggleFullscreen()">
+        Fullscreen
+    </button>
+
+    <button onclick="reconnectVM()">
+        Reconnect
+    </button>
+
+    <button onclick="toggleTerminalMode()">
+        Terminal Mode
+    </button>
+
+    <label class="uploadLabel">
+        Upload File
+        <input type="file" id="fileInput">
+    </label>
+
+    <div class="statusBox">
+        <div>Status: <span id="status">Offline</span></div>
+        <div>Timer: <span id="timer">00:00</span></div>
+    </div>
+
+    <div class="sessionsTitle">
+        Sessions
+    </div>
+
+    <div id="sessions"></div>
+</div>
+
+<div class="main">
+
+    <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+        <div>Starting VM...</div>
+    </div>
+
+    <iframe id="vmFrame"></iframe>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
